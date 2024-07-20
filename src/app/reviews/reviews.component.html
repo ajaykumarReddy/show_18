@@ -1,0 +1,36 @@
+<div class="mx-auto my-8">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Reviews ({{reviews().length}})</h2>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Refer a Friend</button>
+  </div>
+
+  <div class="space-y-4">
+    @for (review of reviews(); track review.id) {
+    <div class="flex">
+      <div class="w-15 h-10 rounded-[50%] mr-4 bg-slate-500"></div>
+      <div>
+        <h3 class="text-lg font-bold">{{review.username}}</h3>
+        <p class="text-gray-600">{{review.reviewDate}}</p>
+        <div class="rating">
+          <span class="text-yellow-400">★★★★★</span>
+        </div>
+        <p>{{review.comment}}</p>
+      </div>
+    </div>
+    }
+
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded w-full">Show
+      More</button>
+  </div>
+
+  <div class="mt-8">
+    <h3 class="text-lg font-bold">Add A Review</h3>
+    <form>
+      <div class="rating mb-4">
+        <span class="text-yellow-400">★★★★★</span>
+      </div>
+      <textarea class="border border-gray-300 p-2 w-full" placeholder="Enter your review"></textarea>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-4">Submit</button>
+    </form>
+  </div>
+</div>

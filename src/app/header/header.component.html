@@ -1,0 +1,93 @@
+<div class="bg-green-900 text-white text-center py-2">
+  <span class="p-2 w-full overflow-hidden text-ellipsis whitespace-nowrap">LIMITED OFFER: 30% OFF. Use RABBIT30 at
+    Checkout.
+    <span id="timer" class="font-bold">23:15:00</span>
+  </span>
+</div>
+
+<div class="flex items-center justify-between p-4">
+
+  <!-- Logo -->
+  <div class="flex  items-center space-x-2">
+    <!-- <img src="path/to/logo.png" alt="Logo" class="h-10"> -->
+    <!-- mobile menu -->
+    <ion-icon class="block md:hidden mr-2" name="menu-outline" size="large"></ion-icon>
+    <ion-icon name="logo-angular" class="logo-angular" size="large"></ion-icon>
+    <div class="flex flex-col">
+      <span class="text-green-700 text-xl md:text-3xl font-bold">Top Shelf</span>
+      <span class="text-gray-500 text-sm">British Columbia</span>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="hidden md:flex relative w-1/2">
+    <input type="text" placeholder="Search"
+      class="w-full py-2 pl-4 pr-10 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+    <button
+      class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-green-600 text-white p-2 rounded-full focus:outline-none">
+      <ion-icon name="search-sharp"></ion-icon>
+    </button>
+  </div>
+
+  <!-- Account and Cart -->
+  <div class="flex items-center space-x-4">
+    <a class="text-gray-800 hover:text-green-600 border-r pr-2">Your Account</a>
+    <div class="relative">
+      <a class="text-gray-800 hover:text-green-600">
+        <ion-icon name="cart-sharp" size="large"></ion-icon>
+      </a>
+      <span class="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-1">
+        {{cartItems()}}
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- mobile search bar -->
+<div class="flex md:hidden max-w-[90%] mx-auto gap-3">
+  <input type="text" placeholder="Search"
+    class="py-2 pl-4 pr-10 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600">
+  <button class="w-10 h-10 transform bg-green-600 text-white p-2 rounded-full focus:outline-none">
+    <ion-icon name="search-sharp"></ion-icon>
+  </button>
+</div>
+
+<!-- main navbar -->
+
+<nav class="hidden md:flex justify-center py-4 border border-y-slate-200 sticky top-0 z-20 bg-slate-50">
+  <ul class="flex space-x-8 font-semibold gap-3">
+    <li><a href="#" class="text-gray-800 hover:text-green-600">Shop All</a></li>
+    <li class="relative group">
+      <a href="#" class="text-gray-800 hover:text-green-600">Flower</a>
+      <ul class="absolute left-0 hidden mt-2 space-y-2 bg-white shadow-lg group-hover:block">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="text-gray-800 hover:text-green-600">Edibles</a></li>
+    <li class="relative group">
+      <a href="#" class="text-gray-800 hover:text-green-600">Concentrates</a>
+      <ul class="absolute left-0 hidden mt-2 space-y-2 bg-white shadow-lg group-hover:block">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="text-gray-800 hover:text-green-600">Mushrooms</a></li>
+    <li class="relative group">
+      <a href="#" class="text-gray-800 hover:text-green-600">Promotions/Bundles</a>
+      <ul class="absolute left-0 hidden mt-2 space-y-2 bg-white shadow-lg group-hover:block">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+      </ul>
+    </li>
+    <li class="relative group">
+      <a href="#" class="text-gray-800 hover:text-green-600">Support</a>
+      <ul class="absolute left-0 hidden mt-2 space-y-2 bg-white shadow-lg group-hover:block">
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 1</a></li>
+        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Option 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="text-gray-800 hover:text-green-600">Rewards</a></li>
+    <li><a href="#" class="text-gray-800 hover:text-green-600">Blog</a></li>
+  </ul>
+</nav>

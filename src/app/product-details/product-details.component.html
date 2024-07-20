@@ -1,0 +1,129 @@
+<div class=" p-4 flex flex-col md:flex-row">
+    <div class="flex-1">
+        <img src="" alt="" srcset="">
+    </div>
+    <!-- Product Details -->
+    <div class="bg-white shadow-lg rounded-lg p-6 flex-1">
+        <div class="flex flex-col items-start gap-2">
+            <h3 class="text-lg font-bold opacity-30 tracking-[4px] uppercase">Concentrates</h3>
+            <h2 class="text-2xl font-semibold">{{product().name}}</h2>
+            <div class="flex gap-2 my-2">
+                <span class="bg-neutral-300 text-green-700 px-3 py-1 rounded-md">Indica</span>
+                <span class="bg-neutral-300 text-green-700 px-3 py-1 rounded-md">Sativa 100%</span>
+            </div>
+            <div class="flex justify-between w-full my-2 flex-wrap">
+                <div class="flex gap-4">
+                    <span class="text-neutral-500 font-bold line-through">{{product().price | currency}}</span>
+                    @let totalPrice = product().price * product().stockQuantity;
+                    <span class="text-red-500 font-bold">{{totalPrice}}</span>
+                </div>
+                <div class="flex items-center gap-2  ">
+                    <div class="flex items-center">
+                        <ion-icon name="star"></ion-icon>
+                    </div>
+                    <span class="text-gray-500 border-r-2 p-2">{{reviewAverage()}}/5</span>
+                    <span class="text-gray-400">{{totalReviews()}} Reviews</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Effects and Description -->
+        <div class="mb-4 grid gap-4">
+            <div class="flex gap-4">
+                <ion-icon name="radio" size="large"></ion-icon>
+                <div>
+                    <h3 class="text-lg text-gray-500 uppercase  mb-2 tracking-[4px]">Effects</h3>
+                    <ul class="list-disc list-inside text-gray-700 font-semibold">
+                        <li>Calming, Creative, Happy, Relaxing, Sleepy, Uplifting</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <ion-icon name="radio" size="large"></ion-icon>
+                <div>
+                    <h3 class="text-lg text-gray-500 uppercase  mb-2 tracking-[4px]">May Relieve</h3>
+                    <ul class="list-disc list-inside text-gray-700 font-semibold">
+                        <li>Anxiety, Arthritis, Chronic Pain, Depression, Fatigue, Inflammation, Insomnia</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="flex gap-4">
+                <ion-icon name="radio" size="large"></ion-icon>
+                <div>
+                    <h3 class="text-lg text-gray-500 uppercase mb-2 tracking-[4px]">Aromas</h3>
+                    <ul class="list-disc list-inside text-gray-700 font-semibold">
+                        <li>Chemical, Citrus, Earthy, Pungent, Sour</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-8">
+            <h3 class="text-base text-gray-500 uppercase tracking-wide mb-1">Description</h3>
+            <p class="mt-4 text-gray-700">Jungle Diamonds is a slightly indica dominant hybrid strain (60% indica/40%
+                sativa) created through crossing the infamous Slurricane X Gorilla Glue #4 strains.</p>
+        </div>
+
+        <!-- Weight and Options -->
+        <div class="my-8 flex-col md:flex justify-between">
+            <div>
+                <h3 class="text-base text-gray-500 uppercase tracking-wide mb-1">Weight</h3>
+                <div class="flex space-x-2 mt-2">
+                    <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">28g</button>
+                    <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">1/2lb</button>
+                    <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">1lb</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-base text-gray-500 uppercase tracking-wide mb-1">Add Integra Pack</h3>
+                <div class="flex space-x-2 mt-2">
+                    <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded flex gap-1 items-center bg-transparent">
+                        <ion-icon class="checkbox" name="checkmark-circle" size="large"></ion-icon>
+                        4g (+$2.00)</button>
+                    <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded flex gap-1 items-center bg-transparent">
+                        <ion-icon class="checkbox" name="checkmark-circle" size="large"></ion-icon>8g (+$5.00)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Purchase Info -->
+        <div class="my-8">
+            <p class="font-normal p-2 bg-yellow-200 w-fit rounded-md">Purchase this product now and earn <span
+                    class="text-red-400">80</span>
+                Points!</p>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+                <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded" (click)="deleteToCart()">-</button>
+                <span class="text-gray-800">{{cartSize()}}</span>
+                <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded" (click)="addToCart()">+</button>
+            </div>
+            <button class="bg-green-600 text-white px-6 py-2 rounded">Add to Cart - {{totalCartPrice() |
+                currency}}</button>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="my-8">
+            <ul class="list-disc list-inside text-gray-700">
+                <li>Free Xpress Shipping on orders over $149</li>
+                <li>Order before 12:00pm for same day dispatch</li>
+                <li>Support & ordering open 7 days a week</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="flex justify-between items-center my-8">
+            <span class="text-gray-600">SKU: N/A</span>
+            <span class="text-gray-600">Categories: AAAA Weed, Indica</span>
+        </div>
+
+        <!-- Reviews -->
+        <app-reviews [reviews]="reviews()" />
+
+    </div>
+</div>
